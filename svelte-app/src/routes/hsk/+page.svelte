@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getAllHSKLevels, getHSKData } from '$lib/data/hsk';
   import { base } from '$app/paths';
+  import { page } from '$app/stores';
   import { ChevronRight } from 'lucide-svelte';
   import FilterTabs from '$lib/components/common/FilterTabs.svelte';
   import PageHero from '$lib/components/common/PageHero.svelte';
@@ -8,7 +9,7 @@
   import StudyListCard from '$lib/components/common/StudyListCard.svelte';
 
   const levels = getAllHSKLevels();
-  let selectedLevel = 1;
+  let selectedLevel = [1,2,3,4,5].includes(Number($page.url.searchParams.get('level'))) ? Number($page.url.searchParams.get('level')) : 1;
 
   $: groups = getHSKData(selectedLevel);
   $: totalWords = groups.reduce((s, g) => s + g.words.length, 0);

@@ -29,7 +29,7 @@
 
   const primaryLinks = [
     { href: '/', label: 'Hôm nay', section: 'home', icon: Home },
-    { href: '/courses', label: 'Học', section: 'learn', icon: BookOpen },
+    { href: '/hsk', label: 'Học HSK', section: 'learn', icon: BookOpen },
     { href: '/review', label: 'Ôn tập', section: 'review', icon: RefreshCw },
     { href: '/stats', label: 'Tiến trình', section: 'progress', icon: ChartNoAxesColumnIncreasing }
   ] as const;
